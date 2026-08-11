@@ -1,9 +1,8 @@
 #!/usr/bin/env bash
 
 path="$HOME/.local/share/fcitx5/rime"
-[[ "$1" == '-i' ]] && path="$HOME/.config/ibus/rime"
-[[ "$1" == '-f' ]] && path="$HOME/.config/fcitx/rime"
-[[ "$1" == '-5' ]] && path="$HOME/.local/share/fcitx5/rime"
+[[ "${1:-}" == '-i' ]] && path="$HOME/.config/ibus/rime"
+[[ "${1:-}" == '-f' ]] && path="$HOME/.config/fcitx/rime"
 mkdir -p "$path"
 cd "$path" || exit
 rm -f haha.html
@@ -14,11 +13,11 @@ file=$(echo "$downloadlink" | sed 's/^https:\/\/ejsoon\.vip\/wp-content\/uploads
 version=$(echo "$file" | sed 's/^haha_//' | sed 's/\.cin$//')
 rm -f "$file"
 wget --tries=100 --retry-connrefused --waitretry=5 "$downloadlink"
-awk '/^%chardef begin$/{ in_table=1; next } /^%chardef end$/{ in_table=0; exit } in_table { print }' "$file" > haha.txt
+awk '/^%chardef begin$/{ in_table=1; next } /^%chardef end$/{ in_table=0; exit } in_table { print }' "$file" >haha.txt
 rm "$file"*
-awk '{ print $2 "\t" $1 }' haha.txt > haha.dict.txt
+awk '{ print $2 "\t" $1 }' haha.txt >haha.dict.txt
 rm haha.txt
-cat > haha.schema.yaml <<EOF
+cat >haha.schema.yaml <<EOF
 # haha.schema.yaml
 #
 schema:
@@ -26,7 +25,7 @@ schema:
   name: "哈哈倉頡"
   version: "$version"
 EOF
-cat >> haha.schema.yaml <<'EOF'
+cat >>haha.schema.yaml <<'EOF'
   author: "尹卂"
   description: "https://ejsoon.vip/haha"
 engine:
@@ -124,7 +123,7 @@ punctuator:
     "<": {commit: "《"}
     ">": {commit: "》"}
 EOF
-cat > haha.dict.yaml <<EOF
+cat >haha.dict.yaml <<EOF
 # haha.dict.yaml
 #
 ---
@@ -134,9 +133,9 @@ sort: original
 ...
 # no comment
 EOF
-cat haha.dict.txt >> haha.dict.yaml
+cat haha.dict.txt >>haha.dict.yaml
 rm haha.dict.txt
-cat > default.custom.yaml <<EOF
+cat >default.custom.yaml <<EOF
 patch:
   schema_list:
     - {schema: haha}
