@@ -63,6 +63,23 @@ Then run the script according to your Rime input method frontend:
 ./install.sh -f
 ```
 
+If you don't want the script to change the default schema, add `-n`.
+
+如果您不希望腳本更改預設架構，新增 `-n`。
+
+如果您不希望脚本更改预设架构，新增 `-n`。
+
+```bash
+# Fcitx 5
+./install.sh -n
+
+# IBus
+./install.sh -i -n
+
+# Fcitx
+./install.sh -f -n
+```
+
 ## Activation 啟用 启用
 
 After running the installation script:

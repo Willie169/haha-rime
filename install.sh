@@ -1,8 +1,26 @@
 #!/usr/bin/env bash
 
 path="$HOME/.local/share/fcitx5/rime"
-[[ "${1:-}" == '-i' ]] && path="$HOME/.config/ibus/rime"
-[[ "${1:-}" == '-f' ]] && path="$HOME/.config/fcitx/rime"
+default=1
+while [ $# -gt 0 ]; do
+  case "$1" in
+    -i)
+      path="$HOME/.config/ibus/rime"
+      shift
+      ;;
+    -f)
+      path="$HOME/.config/fcitx/rime"
+      shift
+      ;;
+    -n)
+      default=0
+      shift
+      ;;
+    *)
+      shift
+      ;;
+  esac
+done
 mkdir -p "$path"
 cd "$path" || exit
 rm -f haha.html
@@ -135,8 +153,10 @@ sort: original
 EOF
 cat haha.dict.txt >>haha.dict.yaml
 rm haha.dict.txt
-cat >default.custom.yaml <<EOF
+if [ "$default" -eq 1 ]; then
+  cat >default.custom.yaml <<EOF
 patch:
   schema_list:
     - {schema: haha}
 EOF
+fi
