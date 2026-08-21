@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
 path="$HOME/.local/share/fcitx5/rime"
-default=1
 while [ $# -gt 0 ]; do
   case "$1" in
     -i)
@@ -10,10 +9,6 @@ while [ $# -gt 0 ]; do
       ;;
     -f)
       path="$HOME/.config/fcitx/rime"
-      shift
-      ;;
-    -n)
-      default=0
       shift
       ;;
     *)
@@ -153,10 +148,8 @@ sort: original
 EOF
 cat haha.dict.txt >>haha.dict.yaml
 rm haha.dict.txt
-if [ "$default" -eq 1 ]; then
-  cat >default.custom.yaml <<EOF
+cat >default.custom.yaml <<EOF
 patch:
   schema_list:
     - {schema: haha}
 EOF
-fi
