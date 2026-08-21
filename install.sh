@@ -157,6 +157,6 @@ if [ "$default" -eq 1 ]; then
   cat >default.custom.yaml <<EOF
 patch:
   schema_list:
-    - {schema: haha}
+    - schema: haha
 EOF
 fi
