@@ -63,11 +63,11 @@ Then run the script according to your Rime input method frontend:
 ./install.sh -f
 ```
 
-If you don't want the script to change the default schema, add `-n`.
+If you don't want the script to touch `default.custom.yaml`, add `-n`. You can use `schema: haha` in your `schema_list` for 哈哈倉頡.
 
-如果您不希望腳本更改預設架構，新增 `-n`。
+如果您不希望腳本修改 `default.custom.yaml`，請新增 `-n`。您可以在 `schema_list` 中使用 `schema: haha` 來表示哈哈倉頡。
 
-如果您不希望脚本更改预设架构，新增 `-n`。
+如果您不希望脚本修改 `default.custom.yaml`，请新增 `-n`。您可以在 `schema_list` 中使用 `schema: haha` 来表示哈哈仓颉。
 
 ```bash
 # Fcitx 5
