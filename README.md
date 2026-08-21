@@ -18,6 +18,23 @@ This project is licensed under the [MIT License](LICENSE.txt).
 
 ## Installation 安裝 安装
 
+Install your preferred Rime input method frontend with your package manager. Take Ubuntu for example:
+
+使用軟體包管理器安裝您偏好的 Rime 輸入法前端。以 Ubuntu 為例：
+
+使用软件包管理器安装您偏好的 Rime 输入法前端。以 Ubuntu 为例：
+
+```bash
+# Fcitx 5
+sudo apt install fcitx5-rime
+
+# IBus
+sudo apt install ibus-rime
+
+# Fcitx
+sudo apt install fcitx-rime
+```
+
 Download the installation script and make it executable:
 
 下載安裝腳本並賦予執行權限：
@@ -29,11 +46,11 @@ wget https://raw.githubusercontent.com/Willie169/haha-rime/refs/heads/main/insta
 chmod +x install.sh
 ```
 
-Then run the script according to your input method frontend:
+Then run the script according to your Rime input method frontend:
 
-然後根據所使用的輸入法前端執行安裝腳本：
+然後根據所使用的 Rime 輸入法前端執行安裝腳本：
 
-然后根据所使用的输入法前端执行安装脚本：
+然后根据所使用的 Rime 输入法前端执行安装脚本：
 
 ```bash
 # Fcitx 5
