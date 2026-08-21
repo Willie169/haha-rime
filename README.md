@@ -99,9 +99,10 @@ After running the installation script:
     開啟 Rime 配置選單，該選單通常在選擇 Rime 時位於輸入法選單中 Rime 選項的旁邊。
 
     开启 Rime 配置选单，该选单通常在选择 Rime 时位于输入法选单中 Rime 选项的旁边。
-3. **Synchronize** and **Deploy** **哈哈倉頡**.
+3. **Synchronize** and **Deploy**.
 
-    **Synchronize** 和 **Deploy** **哈哈倉頡**.
+    **Synchronize** 和 **Deploy**。
 
-    **Synchronize** 和 **Deploy** **哈哈仓颉**.
+    **Synchronize** 和 **Deploy**。
+
 
